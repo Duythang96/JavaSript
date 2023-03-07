@@ -1,0 +1,81 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Bai 1 -->
+    <script>
+        alert("Bài 1: Tính giai thừa");
+        var a = prompt("Nhập số nguyên dương a:");
+        function calculateFactorial(num1){
+            let temp=1;
+            do{
+                temp*=num1;
+                num1--;
+            }
+            while(num1>0)
+            alert(temp);
+        }
+        calculateFactorial(parseInt(a));
+        
+    </script>
+    <!-- Bai 2 -->
+    <script>
+        alert("Bài 2: In chuỗi đảo ngược");
+        var s1 = prompt("Nhập chuỗi:");
+        function reverseString(s1){
+            var newString="";
+            for(var i = s1.length-1;i>=0;i--){
+                newString+= s1[i];
+            }
+            alert(newString);
+        }
+        reverseString(s1);
+        
+    </script>
+
+    <!-- Bai 3 -->
+    <script>
+        alert("Bài 3: translate xin chào");
+        var countryCode = prompt("Nhập mã qg (VN,ENG,JPN):");
+        function translate(code){
+            switch(code){
+                case 'VN':{
+                    alert("Xin chào");
+                    break;
+                }
+                case 'ENG':{
+                    alert("Hello");
+                    break;
+                }
+                case 'JPN':{
+                    alert("Konichiwa");
+                    break;
+                }
+            }
+        }
+        translate(countryCode);
+        
+    </script>
+     <!-- Bai 4 -->
+     <script>
+        alert("Bài 3: Trim chuỗi");
+        var s2 = prompt("Nhập chuoi >15 ký tự:");
+        function subString(s2){
+            var newString = "";
+            for (var index = 0; index < 10; index++) {
+                newString += s2[index];
+            }
+            alert(newString+="...");
+        }
+        subString(s2);
+        
+    </script>
+    
+</body>
+</html>
