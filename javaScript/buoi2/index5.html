@@ -1,0 +1,165 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bai 1 -->
+    <script>
+        let products = [
+            {
+                name: "Iphone 13 Pro Max", // Tên sản phẩm
+                price: 3000000, // Giá mỗi sản phẩm
+                brand: "Apple", // Thương hiệu
+                count: 2, // Số lượng sản phẩm trong giỏ hàng
+            },
+            {
+                name: "Samsung Galaxy Z Fold3",
+                price: 41000000,
+                brand: "Samsung",
+                count: 1,
+            },
+            {
+                name: "IPhone 11",
+                price: 15500000,
+                brand: "Apple",
+                count: 1,
+            },
+            {
+                name: "OPPO Find X3 Pro",
+                price: 19500000,
+                brand: "OPPO",
+                count: 3,
+            },
+        ]
+        // 1. In ra thông tin các sản phẩm trong giỏ hàng
+        function printPro(){           
+            for(let i=0;i<products.length;i++){
+                console.log(products[i].name,' - ',products[i].price,' - ',products[i].brand,' - ',products[i].count);
+            }
+        }
+        printPro();
+        // 2. Tính tổng tiền tất cả sản phẩm trong giỏ hàng
+        function priceSum(){
+            let sum=0;
+            for(let i=0;i<products.length;i++){
+                sum+= products[i].price*products[i].count;    
+            }
+            console.log('tong tien: ',sum);
+        }
+        priceSum();
+        // 3. Tìm các sản phẩm của thuơng hiệu "Apple"
+        function findBrand(){
+            let temp = 0;
+            for(let i=0;i<products.length;i++){
+                if(products[i].brand=="Apple"){
+                    console.log('SP của apple: ',products[i].name);
+                    temp+=1;
+                }    
+            }
+            if(temp==0){
+                console.log('khòng tìm thấy sp!');
+            }
+        }
+        findBrand();
+        // 4. Tìm các sản phẩm có giá > 20000000
+        function findPri(){
+            let temp = 0;
+            for(let i=0;i<products.length;i++){
+                if(products[i].price>20000000){
+                    console.log('SP có giá >20000000: ',products[i].name);
+                    temp+=1;
+                }    
+            }
+            if(temp==0){
+                console.log('khòng tìm thấy sp!');
+            }
+        }
+        findPri();
+        // 5. Tìm các sản phẩm có chữ "pro" trong tên (Không phân biệt hoa thường)
+        function findName(){
+            let temp = 0;
+            for(let i=0;i<products.length;i++){
+                if(products[i].name.toLowerCase().includes("pro")==true){
+                    console.log('SP có chữ pro: ',products[i].name);
+                    temp+=1;
+                }    
+            }
+            if(temp==0){
+                console.log('khòng tìm thấy sp!');
+            }
+        }
+        findName();
+        // 6. Thêm 1 sản phẩm bất kỳ vào trong mảng product
+        function addItem(){
+            var item ={
+                name: "Apple watch se",
+                price: 6000000,
+                brand: "Apple",
+                count: 2,
+            }
+            products.push(item);
+            console.log(products);
+        }
+        addItem();
+        // 7. Xóa tất cả sản phẩm của thương hiệu "Samsung" trong giỏ hàng
+        function deleteItem(){
+            let temp = 0;
+            for(let i=0;i<products.length;i++){
+                if(products[i].brand=="Samsung"){
+                    products.splice(i,1);
+                    temp+=1;
+                }    
+            }
+            if(temp==0){
+                console.log('khòng tìm thấy sp!');
+            }
+            console.log(products);
+        }
+        deleteItem();
+        //  8. Sắp xếp giỏ hàng theo price tăng dần
+        function sortProducts(){
+            var temp = 0;
+            for(let i=0;i<products.length;i++){
+                for(let j=i+1;j<products.length;j++){
+                    if(products[i].price>products[j].price){
+                        let temp = products[i];
+                        products[i]=products[j];
+                        products[j]=temp;
+                    }
+                }
+            }
+            console.log(products);
+        }
+        sortProducts();
+        // 9. Sắp xếp giỏ hàng theo count giảm dần
+        function sortCount(){
+            var temp = 0;
+            for(let i=0;i<products.length;i++){
+                for(let j=i+1;j<products.length;j++){
+                    if(products[i].count<products[j].count){
+                        let temp = products[i];
+                        products[i]=products[j];
+                        products[j]=temp;
+                    }
+                }
+            }
+            console.log(products);
+        }
+        sortCount();
+        // 10. Lấy ra 2 sản phẩm bất kỳ trong giỏ hàng
+        function randomItem(){
+            var temp = [];
+            for(let i=0;i<2;i++){
+                temp.push(products[Math.floor(Math.random()*products.length)]);
+            }
+            console.log(temp);
+        }
+        randomItem();
+    </script>
+   
+</body>
+</html>
