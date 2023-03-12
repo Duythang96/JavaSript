@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class List</title>
+    <style>
+        .text-red {
+            color: red;
+        }
+        .text-bold {
+            font-weight: bold;
+        }
+        .text-big {
+            font-size: 2rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-uppercase{
+            text-transform: uppercase;
+        }
+        .text-backgroundColor{
+            background-color: green;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="heading">Bài tập thực hành DOM</h1>
+    <p id="text">I wold like to show you about the new plant</p>
+    <p class=" test">ABC</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+     </ul>
+    <script>
+        //bai 1
+        const pColor = document.getElementById('text');
+        pColor.style.color = '#777';
+        pColor.classList.add("text-big");
+        pColor.innerHTML= "Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript.";
+    </script>
+    <script>
+        //bai 2
+        const ulSelect = document.getElementsByTagName('ul');
+        for(let i=0; i< ulSelect.length;i++){
+            ulSelect[i].style.color = "blue";
+        }
+    </script>
+    <script>
+        //bai 3.1
+        const ulSelect1 = document.getElementById('list');
+        console.log(ulSelect1);
+        const newLi1 = document.createElement('li');
+        newLi1.innerHTML = "Item 8";
+        console.log(newLi1);
+        const newLi2 = document.createElement('li');
+        newLi2.innerHTML = "Item 9";
+        const newLi3 = document.createElement('li');
+        newLi3.innerHTML = "Item 10";
+        ulSelect1.insertAdjacentElement('beforeend' , newLi1);
+        ulSelect1.insertAdjacentElement('beforeend' , newLi2);
+        ulSelect1.insertAdjacentElement('beforeend' , newLi3);
+
+        //bai 3.2
+        let ulSelect12 = document.querySelectorAll("ul#list li");
+        ulSelect12[0].style.color = "red";
+        ulSelect12[2].classList.add("text-backgroundColor");
+        //Remove thẻ <li> 4
+        let ulParent = document.getElementById('list');
+        ulParent.removeChild(ulSelect12[3]);
+        console.log(ulSelect12);
+        //Thêm thẻ <li> mới thay thế cho thẻ <li> 4 bị xóa ở bước trước, thẻ <li> mới có nội dung bất kỳ
+        let newLi4 = document.createElement("li");
+        newLi4.innerText = "Thẻ li thay cho li4";
+        ulSelect12[4].insertAdjacentElement('beforebegin',newLi4);
+        //
+        
+
+    </script>
+</body>
+</html>
