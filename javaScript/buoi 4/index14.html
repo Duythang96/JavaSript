@@ -73,7 +73,7 @@
             h4Cout.innerHTML = "Total box: "+colorCount;
         }
         addBox();
-        const para3 = document.querySelector('.boxes div:nth-child(1)');
+        const para3 = document.querySelector('.boxes');
             console.log(para3);
         
         // thêm hình
@@ -81,8 +81,12 @@
         regAdd.addEventListener('click', function(){
             addBox();
         })
-        console.log(colorCount);
         
+        //remove box
+        para3.addEventListener('click', function(e){
+            let event = e.target.classList.add('hide');
+            console.log(event);         
+        });
     </script>
 </body>
 
