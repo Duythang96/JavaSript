@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            display: block;
+            background-color: #f3f3f3;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            float: left;
+            margin: 5px;
+        }
+
+        .box:hover {
+            transform: scale(.9);
+            transition-duration: .5s;
+            opacity: .8;
+            cursor: pointer;
+        }
+
+        .box:active {
+            transform: scale(1.5);
+            transition-duration: .5s;
+        }
+        
+        .hide{
+            display: none ;
+        }
+    
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="wrap">
+            <h1> JS DOM</h1>
+            <button id="btn">More boxes</button>
+            <h4 id="score"> Total box:<span class="points"></span></h4>
+
+            <div class="boxes">
+            </div>
+        </div>
+    </body>
+    <script>
+        let colors = [
+            '#3498db',
+            '#9b59b6',
+            '#e74c3c',
+            '#2c3e50',
+            '#d35400',
+        ]
+        let colorCount = 0;
+        const boxCreat = document.createElement('div');
+        const hSelect = document.querySelector('.boxes');
+        // tạo 5 box
+        function addBox(){
+            for(let i=0;i<colors.length;i++){
+                const boxCreat = document.createElement('div');
+                boxCreat.classList.add('box','box:hover','box:active');
+                boxCreat.style.backgroundColor=colors[i];
+            
+                hSelect.insertAdjacentElement('beforeend',boxCreat);
+                colorCount++;
+            }
+            let h4Cout = document.getElementById('score');
+            h4Cout.innerHTML = "Total box: "+colorCount;
+        }
+        addBox();
+        const para3 = document.querySelector('.boxes div:nth-child(1)');
+            console.log(para3);
+        
+        // thêm hình
+        let regAdd=document.getElementById('btn');
+        regAdd.addEventListener('click', function(){
+            addBox();
+        })
+        console.log(colorCount);
+        
+    </script>
+</body>
+
+</html>
