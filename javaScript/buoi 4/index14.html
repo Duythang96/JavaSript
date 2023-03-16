@@ -85,7 +85,11 @@
         //remove box
         para3.addEventListener('click', function(e){
             let event = e.target.classList.add('hide');
-            console.log(event);         
+            console.log(event); 
+            //giảm count box
+            colorCount--;    
+            let h4Cout = document.getElementById('score');
+            h4Cout.innerHTML = "Total box: "+colorCount;    
         });
     </script>
 </body>
