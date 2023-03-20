@@ -1,0 +1,62 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bai 1 -->
+    <script>
+        // Khai báo mảng số
+        users = [
+            {
+                name: "Bùi Công Sơn",
+                age: 30,
+                isStatus: true
+            },
+            {
+                name: "Nguyễn Thu Hằng",
+                age: 27,
+                isStatus: false
+            },
+            {
+                name: "Phạm Văn Dũng",
+                age: 20,
+                isStatus: false
+            }
+        ]
+        // tim tuoi >25
+        function findAge(){
+            let temp = 0;
+            for(let i=0;i<users.length;i++){
+                if(users[i].age>25 &&users[i].isStatus==true){
+                    console.log('user: ',users[i]);
+                    temp+=1;
+                }    
+            }
+            if(temp==0){
+                console.log('khòng tìm thấy user!');
+            }
+        }
+        findAge();
+        // age tang dan
+        
+        function sortAge(){
+            var temp = 0;
+            for(let i=0;i<users.length;i++){
+                for(let j=i+1;j<users.length;j++){
+                    if(users[i].age>users[j].age){
+                        let temp = users[i];
+                        users[i]=users[j];
+                        users[j]=temp;
+                    }
+                }
+            }
+            console.log(users);
+        }
+        sortAge();
+    </script>
+</body>
+</html>

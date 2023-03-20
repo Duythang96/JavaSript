@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bai 1 -->
+    <script>
+        // Khai báo mảng số
+        let arrayInput = [];
+        let arrayOutput = [];
+        let arrayLength =prompt("Nhap độ dài mảng: ");
+        let arrayMax=0;
+        let temp =0;
+        for(let i=0; i<arrayLength;i++){
+            arrayInput[i]=prompt("Nhạp chuỗi: ");
+            if(arrayMax<arrayInput[i].length){
+                arrayMax=arrayInput[i].length;
+                temp =i;
+            }
+        }
+        //arrayOutput[0]=arrayInput[temp];
+        getStringHasMaxLength(arrayInput);
+        function getStringHasMaxLength(arrayValue){
+            let count =0;
+            for(let i=0; i< arrayValue.length;i++){
+                if(arrayValue[i].length==arrayMax){               
+                    arrayOutput[count]=arrayValue[i];
+                    count++;
+                }
+            }
+            
+        }
+       console.log(arrayOutput);
+       alert("ket qua:"+arrayOutput) ;
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bai 1 -->
+    <script>
+        // Khai báo mảng số
+        const arrayInput = ["one", "two", "three", "one", "one", "three"];
+        getCountElement(arrayInput)
+        function getCountElement(arrayInput){
+            do{
+                let temp = arrayInput[0];
+                let count = 0;
+                for(let i = 0; i<arrayInput.lenght;i++){
+                    if(temp==arrayInput[i]){
+                        count++;
+                        const deleteValue = arrayInput.splice(i,1);
+                    }
+                }
+                console.log(arrayInput[0]+":"+count);
+            }
+            while(arrayInput!=null)
+            
+        };
+        
+    </script>
+</body>
+</html>
